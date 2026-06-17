@@ -18,11 +18,7 @@
             --soft-white: #FEFEFE;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Sora', sans-serif;
@@ -32,7 +28,7 @@
             background: var(--soft-white);
         }
 
-        /* Floating RSVP Button */
+        /* Floating RSVP */
         .floating-rsvp {
             position: fixed;
             bottom: 30px;
@@ -40,31 +36,28 @@
             z-index: 1000;
             animation: pulse 2s infinite;
         }
-
         .floating-rsvp a {
             display: block;
             padding: 18px 36px;
-            background: linear-gradient(135deg, var(--coral) 0%, var(--peach) 100%);
+            background: linear-gradient(135deg, var(--coral), var(--peach));
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
-            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 8px 30px rgba(255,107,107,0.4);
             transition: all 0.3s ease;
         }
-
         .floating-rsvp a:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 12px 40px rgba(255,107,107,0.5);
         }
-
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--ocean) 0%, var(--sky) 50%, var(--mint) 100%);
@@ -76,49 +69,39 @@
             overflow: hidden;
             padding: 40px 20px;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            width: 800px;
-            height: 800px;
+            width: 800px; height: 800px;
             background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
+            top: -200px; right: -200px;
             border-radius: 50%;
             animation: float1 20s infinite ease-in-out;
         }
-
         .hero::after {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            bottom: -150px;
-            left: -150px;
+            bottom: -150px; left: -150px;
             border-radius: 50%;
             animation: float2 15s infinite ease-in-out;
         }
-
         @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(50px, -30px) rotate(120deg); }
-            66% { transform: translate(-30px, 40px) rotate(240deg); }
+            0%, 100% { transform: translate(0,0) rotate(0deg); }
+            33% { transform: translate(50px,-30px) rotate(120deg); }
+            66% { transform: translate(-30px,40px) rotate(240deg); }
         }
-
         @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-40px, -50px) rotate(180deg); }
+            0%, 100% { transform: translate(0,0) rotate(0deg); }
+            50% { transform: translate(-40px,-50px) rotate(180deg); }
         }
-
         .hero-content {
             max-width: 900px;
             text-align: center;
             position: relative;
             z-index: 2;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 5.5rem;
@@ -126,9 +109,8 @@
             margin-bottom: 25px;
             letter-spacing: -2px;
             animation: fadeInUp 1s ease-out;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -136,34 +118,28 @@
             font-weight: 300;
             animation: fadeInUp 1s ease-out 0.2s backwards;
         }
-
+        .hero-tagline {
+            font-size: 1rem;
+            opacity: 0.85;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+            margin-bottom: 10px;
+        }
         .event-banner {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
             padding: 25px 40px;
             border-radius: 20px;
             margin: 40px auto;
             max-width: 600px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255,255,255,0.3);
             animation: fadeInUp 1s ease-out 0.4s backwards;
         }
-
-        .event-banner h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .event-details-hero {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .event-details-hero strong {
-            font-weight: 700;
-            color: var(--peach);
-        }
-
+        .event-banner h2 { font-size: 1.3rem; margin-bottom: 15px; font-weight: 600; }
+        .event-details-hero { font-size: 1.2rem; line-height: 1.8; }
+        .event-details-hero strong { font-weight: 700; color: var(--peach); }
         .cta-buttons {
             display: flex;
             gap: 20px;
@@ -172,101 +148,85 @@
             margin-top: 40px;
             animation: fadeInUp 1s ease-out 0.6s backwards;
         }
-
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Buttons */
         .btn {
             padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.15rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
             border: none;
             cursor: pointer;
             display: inline-block;
         }
-
         .btn-primary {
             background: linear-gradient(135deg, var(--coral) 0%, var(--peach) 100%);
             color: white;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.3);
         }
-
         .btn-primary:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 12px 35px rgba(255,107,107,0.4);
         }
-
         .btn-secondary {
             background: white;
             color: var(--ocean);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-
         .btn-secondary:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
         }
 
-        /* Navigation */
+        /* Nav */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 45px;
-            padding: 25px;
+            gap: 35px;
+            padding: 22px;
             flex-wrap: wrap;
         }
-
         nav a {
             text-decoration: none;
             color: var(--charcoal);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: all 0.3s;
             position: relative;
         }
-
         nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
             background: var(--ocean);
             transition: width 0.3s ease;
         }
+        nav a:hover::after { width: 100%; }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Section Styling */
+        /* Sections */
         section {
             padding: 100px 20px;
+        }
+        .section-inner {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
@@ -275,218 +235,406 @@
             font-weight: 700;
             letter-spacing: -1px;
         }
-
         .section-intro {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #555;
             margin-bottom: 60px;
             max-width: 800px;
             line-height: 1.8;
         }
 
-        /* Why It Matters Section */
-        #why-it-matters {
-            background: linear-gradient(135deg, var(--cream) 0%, #FFF5EB 100%);
+        /* ── IMPACT COUNTER SECTION ── */
+        #impact {
+            background: linear-gradient(135deg, var(--ocean) 0%, #0d5f7a 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        #impact h2 { color: white; margin-bottom: 15px; }
+        #impact .section-intro { color: rgba(255,255,255,0.85); margin: 0 auto 60px; }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .impact-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 24px;
+            padding: 40px 25px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.22);
+        }
+        .impact-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--peach);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .impact-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            line-height: 1.4;
         }
 
+        /* ── WHY IT MATTERS ── */
+        #why-it-matters {
+            background: linear-gradient(135deg, var(--cream), #FFF5EB);
+        }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 35px;
             margin-top: 50px;
         }
-
         .stat-card {
             background: white;
             padding: 45px 35px;
             border-radius: 25px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border: 3px solid transparent;
         }
-
         .stat-card:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: var(--mint);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
         }
-
         .stat-number {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--ocean) 0%, var(--sky) 100%);
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 15px;
         }
+        .stat-label { font-size: 1.15rem; color: var(--charcoal); font-weight: 500; }
 
-        .stat-label {
-            font-size: 1.15rem;
-            color: var(--charcoal);
-            font-weight: 500;
-        }
-
-        /* Screening Process Section */
+        /* ── SCREENING PROCESS ── */
         .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
-
         .step {
             position: relative;
             padding: 40px;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             border-left: 6px solid var(--mint);
             transition: all 0.3s ease;
         }
-
         .step:hover {
             transform: translateX(10px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
         }
-
         .step-number {
             font-family: 'Playfair Display', serif;
             font-size: 5rem;
-            background: linear-gradient(135deg, var(--mint) 0%, var(--sky) 100%);
+            background: linear-gradient(135deg, var(--mint), var(--sky));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             opacity: 0.4;
             position: absolute;
-            top: 15px;
-            right: 25px;
+            top: 15px; right: 25px;
             font-weight: 800;
         }
+        .step h3 { font-size: 1.6rem; margin-bottom: 18px; color: var(--charcoal); font-weight: 600; }
 
-        .step h3 {
-            font-size: 1.6rem;
-            margin-bottom: 18px;
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-
-        /* Risk Quiz Section */
-        #risk-quiz {
-            background: linear-gradient(135deg, #F8F9FF 0%, #FFF5F8 100%);
-            text-align: center;
-        }
-
-        .quiz-container {
-            max-width: 750px;
-            margin: 0 auto;
+        /* ── OUR STORY / EVENTS TIMELINE ── */
+        #our-story {
             background: white;
-            padding: 60px;
-            border-radius: 30px;
-            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
         }
-
-        .quiz-question {
-            margin-bottom: 45px;
-            text-align: left;
+        .timeline {
+            position: relative;
+            margin-top: 60px;
+            padding-left: 40px;
         }
-
-        .quiz-question h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            color: var(--charcoal);
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--ocean), var(--mint));
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 10px;
+            width: 22px; height: 22px;
+            background: var(--ocean);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--sky);
+        }
+        .timeline-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 35px rgba(0,0,0,0.09);
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.14);
+        }
+        .timeline-card-header {
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
+            color: white;
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .timeline-card-header h3 { font-size: 1.4rem; font-weight: 600; }
+        .timeline-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 600;
         }
+        .timeline-card-body { padding: 30px; }
+        .timeline-card-body p { color: #555; margin-bottom: 20px; line-height: 1.7; }
 
-        .quiz-options {
+        /* Photo grid inside timeline */
+        .photo-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .photo-grid.two-col { grid-template-columns: 1fr 1fr; }
+        .photo-grid.three-col { grid-template-columns: 1fr 1fr 1fr; }
+        .photo-grid.four-col { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        .photo-slot {
+            background: linear-gradient(135deg, #f0f4f8, #e8edf3);
+            border-radius: 12px;
+            aspect-ratio: 4/3;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #c8d5e0;
+            color: #7a98b0;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 15px;
+            transition: border-color 0.3s, background 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            border-radius: 10px;
+        }
+        .photo-slot-label {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .attendee-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
-        .quiz-option {
-            padding: 22px;
-            background: var(--cream);
+        /* ── MUSD FEATURE ── */
+        .musd-feature {
+            background: linear-gradient(135deg, #f8f4ff, #fff4f8);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+            border: 2px solid var(--lavender);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .musd-feature-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+        .musd-feature-text p { color: #555; line-height: 1.8; margin-bottom: 15px; }
+        .musd-highlight {
+            background: white;
             border-radius: 15px;
+            padding: 20px;
+            border-left: 5px solid var(--lavender);
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .musd-highlight cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--ocean);
+            font-size: 0.9rem;
+        }
+        .musd-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        /* ── RISK QUIZ (embedded form) ── */
+        #risk-quiz {
+            background: linear-gradient(135deg, #F8F9FF, #FFF5F8);
+            text-align: center;
+        }
+        .quiz-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .quiz-tab {
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: 2px solid var(--ocean);
+            background: white;
+            color: var(--ocean);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.95rem;
+        }
+        .quiz-tab.active, .quiz-tab:hover {
+            background: var(--ocean);
+            color: white;
+        }
+        .quiz-panel { display: none; }
+        .quiz-panel.active { display: block; }
+
+        /* Inline quiz */
+        .quiz-container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: white;
+            padding: 55px;
+            border-radius: 30px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .quiz-question { margin-bottom: 38px; }
+        .quiz-question h3 { font-size: 1.2rem; margin-bottom: 18px; color: var(--charcoal); font-weight: 600; }
+        .quiz-options { display: flex; flex-direction: column; gap: 14px; }
+        .quiz-option {
+            padding: 18px 22px;
+            background: var(--cream);
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             border: 3px solid transparent;
             font-weight: 500;
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            text-align: left;
         }
-
         .quiz-option:hover {
-            background: linear-gradient(135deg, var(--ocean) 0%, var(--sky) 100%);
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
             color: white;
             border-color: var(--ocean);
             transform: translateX(5px);
         }
-
         .quiz-option.selected {
-            background: linear-gradient(135deg, var(--ocean) 0%, var(--sky) 100%);
+            background: linear-gradient(135deg, var(--ocean), var(--sky));
             color: white;
             border-color: var(--charcoal);
         }
-
         #quiz-result {
             display: none;
             margin-top: 35px;
             padding: 35px;
             border-radius: 20px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
+        #quiz-result.show { display: block; }
+        #quiz-result.high-risk { background: #FFF3CD; border: 3px solid var(--peach); color: var(--charcoal); }
+        #quiz-result.consult { background: #FFF0F0; border: 3px solid var(--coral); color: var(--charcoal); }
+        #quiz-result.low-risk { background: #D4EDDA; border: 3px solid var(--mint); color: var(--charcoal); }
 
-        #quiz-result.show {
+        /* Google Form embed */
+        .form-container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-container iframe {
+            width: 100%;
+            height: 900px;
+            border: none;
             display: block;
         }
 
-        #quiz-result.high-risk {
-            background: #FFF3CD;
-            border: 3px solid var(--peach);
-            color: var(--charcoal);
-        }
-
-        #quiz-result.low-risk {
-            background: #D4EDDA;
-            border: 3px solid var(--mint);
-            color: var(--charcoal);
-        }
-
-        /* Event Section */
+        /* ── OUR EVENT ── */
         #our-event {
             background: linear-gradient(135deg, var(--charcoal) 0%, #34495e 50%, var(--ocean) 100%);
             color: white;
         }
-
-        #our-event h2,
-        #our-event .section-intro {
-            color: white;
-        }
-
+        #our-event h2, #our-event .section-intro { color: white; }
         .event-details {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.15);
             backdrop-filter: blur(15px);
             padding: 50px;
             border-radius: 30px;
             margin-top: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.2);
         }
-
         .event-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 35px;
             margin-bottom: 40px;
         }
-
         .event-info-item {
             text-align: center;
             padding: 25px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             border-radius: 20px;
         }
-
         .event-info-item strong {
             display: block;
             font-size: 1.7rem;
@@ -494,12 +642,7 @@
             color: var(--peach);
             font-weight: 700;
         }
-
-        .event-info-item p {
-            font-size: 1.15rem;
-            line-height: 1.6;
-        }
-
+        .event-info-item p { font-size: 1.15rem; line-height: 1.6; }
         .event-features {
             list-style: none;
             display: grid;
@@ -507,10 +650,9 @@
             gap: 25px;
             margin-top: 40px;
         }
-
         .event-features li {
             padding: 25px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -518,185 +660,291 @@
             font-weight: 500;
             font-size: 1.05rem;
         }
+        .event-features li::before { content: '✓'; font-size: 1.8rem; color: var(--mint); font-weight: bold; flex-shrink: 0; }
 
-        .event-features li::before {
-            content: '✓';
-            font-size: 1.8rem;
-            color: var(--mint);
-            font-weight: bold;
+        /* ── CHILDREN'S BOOK ── */
+        #book {
+            background: linear-gradient(135deg, #fffbf0, #fff5f8);
+        }
+        .book-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .book-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+        .book-info p { color: #555; line-height: 1.8; margin-bottom: 20px; }
+        .book-plans {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .book-plans li {
+            padding: 14px 20px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+        .book-plans li::before {
+            content: '📖';
+            font-size: 1.3rem;
             flex-shrink: 0;
         }
+        .book-illustrations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .book-illustration-slot {
+            background: linear-gradient(135deg, #fff5e6, #ffecd2);
+            border-radius: 15px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ffb88c;
+            color: #c97a4e;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .book-illustration-slot img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            border-radius: 13px;
+        }
+        .book-coming-soon {
+            background: linear-gradient(135deg, var(--coral), var(--peach));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
 
-        /* Resources Section */
+        /* ── RESOURCES ── */
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
             margin-top: 50px;
         }
-
         .resource-card {
             background: white;
             padding: 50px;
             border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             text-align: center;
             transition: all 0.4s ease;
             border: 3px solid transparent;
         }
-
         .resource-card:hover {
             transform: translateY(-10px);
             border-color: var(--lavender);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
         }
+        .resource-icon { font-size: 3.5rem; margin-bottom: 25px; }
+        .resource-card h3 { font-size: 1.6rem; margin-bottom: 18px; color: var(--charcoal); font-weight: 600; }
+        .resource-card p { margin-bottom: 25px; color: #666; line-height: 1.7; }
 
-        .resource-icon {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-        }
-
-        .resource-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 18px;
-            color: var(--charcoal);
-            font-weight: 600;
-        }
-
-        .resource-card p {
-            margin-bottom: 25px;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, var(--cream) 0%, #FFF5EB 100%);
+        /* ── SOCIAL MEDIA ── */
+        #social {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
             text-align: center;
         }
+        #social h2 { color: white; }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .social-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 24px;
+            padding: 40px 50px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            min-width: 220px;
+        }
+        .social-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.18);
+        }
+        .social-card .social-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+        .social-card .social-name { font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: 8px; }
+        .social-card .social-handle { color: var(--mint); font-size: 1rem; }
+        .tiktok-embed-container {
+            max-width: 700px;
+            margin: 50px auto 0;
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+        .tiktok-embed-container p { color: rgba(255,255,255,0.8); margin-bottom: 20px; font-size: 1.05rem; }
+        .tiktok-embed-container a {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #ff0050, #ff6a00);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .tiktok-embed-container a:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,0,80,0.4); }
 
+        /* ── CONTACT ── */
+        #contact {
+            background: linear-gradient(135deg, var(--cream), #FFF5EB);
+            text-align: center;
+        }
         .contact-info {
             max-width: 650px;
             margin: 0 auto;
             background: white;
             padding: 60px;
             border-radius: 30px;
-            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
         }
-
         .team-member {
-            margin-bottom: 25px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 18px 20px;
             background: var(--cream);
             border-radius: 15px;
             transition: all 0.3s ease;
         }
-
         .team-member:hover {
-            background: linear-gradient(135deg, var(--cream) 0%, #FFE8D6 100%);
+            background: linear-gradient(135deg, var(--cream), #FFE8D6);
             transform: scale(1.02);
         }
+        .team-member strong { color: var(--ocean); display: block; margin-bottom: 5px; font-size: 1.2rem; }
 
-        .team-member strong {
-            color: var(--ocean);
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
         footer {
             background: var(--charcoal);
             color: white;
             text-align: center;
             padding: 50px 20px;
         }
-
-        footer p {
-            opacity: 0.85;
-            line-height: 1.8;
-        }
+        footer p { opacity: 0.85; line-height: 1.8; }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            .musd-feature { grid-template-columns: 1fr; }
+            .book-layout { grid-template-columns: 1fr; }
+        }
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            section h2 {
-                font-size: 2.5rem;
-            }
-
-            .quiz-container,
-            .contact-info {
-                padding: 35px 25px;
-            }
-
-            .floating-rsvp {
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .floating-rsvp a {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
-
-            .event-banner {
-                padding: 20px 25px;
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            section h2 { font-size: 2.5rem; }
+            .quiz-container, .contact-info { padding: 35px 25px; }
+            .floating-rsvp { bottom: 20px; right: 20px; }
+            .floating-rsvp a { padding: 15px 30px; font-size: 1rem; }
+            .photo-grid.three-col, .photo-grid.four-col { grid-template-columns: 1fr 1fr; }
+            .musd-photos { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating RSVP Button -->
-    <div class="floating-rsvp">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank">✨ RSVP NOW</a>
-    </div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Breathe Hope</h1>
-            <p class="hero-subtitle">Early detection saves lives. Join us for a free educational event about lung cancer screening.</p>
-            
-            <div class="event-banner">
-                <h2>🗓️ Save the Date!</h2>
-                <div class="event-details-hero">
-                    <strong>Friday, April 17, 2026</strong><br>
-                    4:00 PM - 6:30 PM<br>
-                    Milpitas Library
-                </div>
+<!-- Floating RSVP -->
+<div class="floating-rsvp">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank">✨ RSVP NOW</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-content">
+        <p class="hero-tagline">American Lung Cancer Screening Innovation Challenge</p>
+        <h1>Breathe Hope</h1>
+        <p class="hero-subtitle">Early detection saves lives. Join us for a free educational event about lung cancer screening.</p>
+        <div class="event-banner">
+            <h2>🗓️ Save the Date!</h2>
+            <div class="event-details-hero">
+                <strong>Friday, April 17, 2026</strong><br>
+                4:00 PM – 6:30 PM<br>
+                Milpitas Library
             </div>
+        </div>
+        <div class="cta-buttons">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank" class="btn btn-primary">RSVP for Free</a>
+            <a href="#our-story" class="btn btn-secondary">See Our Impact</a>
+        </div>
+    </div>
+</div>
 
-            <div class="cta-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank" class="btn btn-primary">RSVP for Free</a>
-                <a href="#our-event" class="btn btn-secondary">Learn More</a>
+<!-- Nav -->
+<nav>
+    <ul>
+        <li><a href="#impact">Our Impact</a></li>
+        <li><a href="#why-it-matters">Why It Matters</a></li>
+        <li><a href="#screening">The Screening</a></li>
+        <li><a href="#our-story">Events</a></li>
+        <li><a href="#risk-quiz">Risk Quiz</a></li>
+        <li><a href="#our-event">Next Event</a></li>
+        <li><a href="#book">Children's Book</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ── IMPACT ── -->
+<section id="impact">
+    <div class="section-inner">
+        <h2>Our Impact So Far</h2>
+        <p class="section-intro">Founded by three Milpitas High School students, Project Breathe Hope has reached hundreds of community members across multiple events — and we're just getting started.</p>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <span class="impact-number">4</span>
+                <span class="impact-label">Community events hosted</span>
+            </div>
+            <div class="impact-card">
+                <span class="impact-number">200+</span>
+                <span class="impact-label">Community members reached</span>
+            </div>
+            <div class="impact-card">
+                <span class="impact-number">154</span>
+                <span class="impact-label">Attendees at library event alone</span>
+            </div>
+            <div class="impact-card">
+                <span class="impact-number">MUSD</span>
+                <span class="impact-label">Presented to entire Milpitas Unified School District</span>
+            </div>
+            <div class="impact-card">
+                <span class="impact-number">2</span>
+                <span class="impact-label">Senior center walkthroughs</span>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#why-it-matters">Why It Matters</a></li>
-            <li><a href="#screening">The Screening</a></li>
-            <li><a href="#risk-quiz">Risk Quiz</a></li>
-            <li><a href="#our-event">Our Event</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Why It Matters Section -->
-    <section id="why-it-matters">
+<!-- ── WHY IT MATTERS ── -->
+<section id="why-it-matters">
+    <div class="section-inner">
         <h2>Why Early Screening Matters</h2>
-        <p class="section-intro">Lung cancer is often called a "silent disease" because it typically doesn't show symptoms in its early stages when treatment is most effective. Regular screening can catch cancer early and save lives.</p>
-        
+        <p class="section-intro">Lung cancer is often called a "silent disease" because it typically doesn't show symptoms in its early stages — when treatment is most effective. Regular screening can catch cancer early and save lives.</p>
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">#2</div>
@@ -712,16 +960,17 @@
             </div>
             <div class="stat-card">
                 <div class="stat-number">Early</div>
-                <div class="stat-label">Detection dramatically improves outcomes</div>
+                <div class="stat-label">Detection dramatically improves survival outcomes</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Screening Process Section -->
-    <section id="screening">
+<!-- ── SCREENING PROCESS ── -->
+<section id="screening">
+    <div class="section-inner">
         <h2>What is LDCT Screening?</h2>
         <p class="section-intro">Low Dose Computed Tomography (LDCT) is a quick, painless scan that takes detailed pictures of your lungs. Here's what to expect:</p>
-        
         <div class="process-steps">
             <div class="step">
                 <span class="step-number">1</span>
@@ -736,7 +985,7 @@
             <div class="step">
                 <span class="step-number">3</span>
                 <h3>Hold Your Breath</h3>
-                <p>The technician will ask you to hold your breath for a few seconds while the machine takes pictures of your lungs.</p>
+                <p>The technician will ask you to hold your breath for a few seconds while the machine captures images of your lungs.</p>
             </div>
             <div class="step">
                 <span class="step-number">4</span>
@@ -744,56 +993,240 @@
                 <p>Your doctor will receive the results and discuss them with you, usually within a few days.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Risk Quiz Section -->
-    <section id="risk-quiz">
+<!-- ── OUR STORY / EVENTS TIMELINE ── -->
+<section id="our-story">
+    <div class="section-inner">
+        <h2>Our Journey</h2>
+        <p class="section-intro">From a single library walkthrough to school board presentations, Project Breathe Hope has been on the move. Here's every event we've hosted.</p>
+
+        <div class="timeline">
+
+            <!-- Event 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-card-header">
+                        <h3>📍 Event #1 — Immersive Walkthrough at Milpitas Library</h3>
+                        <span class="timeline-badge">April 17, 2026</span>
+                    </div>
+                    <div class="timeline-card-body">
+                        <span class="attendee-count">✅ 154 attendees confirmed</span>
+                        <p>Our flagship event at the Milpitas Library featured interactive stations, a survivor wall, myth-busting displays, and free care packages. Community members of all ages walked through the LDCT screening process and learned how to assess their own risk.</p>
+                        <!-- Replace src with real photo paths when available -->
+                        <div class="photo-grid two-col">
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Event photo 1
+                                <!-- <img src="event1-photo1.jpg" alt="Milpitas Library event"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Event photo 2
+                                <!-- <img src="event1-photo2.jpg" alt="Milpitas Library attendees"> -->
+                            </div>
+                        </div>
+                        <p style="margin-top:20px; font-size:0.9rem; color:#888;">📱 Watch our event TikTok recap: <a href="https://youtube.com/shorts/YMMl7ZWixsc" target="_blank" style="color:var(--ocean); font-weight:600;">youtube.com/shorts/YMMl7ZWixsc</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-card-header">
+                        <h3>🏡 Event #2 — Immersive Walkthrough at Local Senior Center</h3>
+                        <span class="timeline-badge">Spring 2026</span>
+                    </div>
+                    <div class="timeline-card-body">
+                        <p>We brought our immersive walkthrough experience to a local senior center — one of the highest-risk populations for lung cancer. Seniors engaged with educational displays, completed risk assessments, and left with resource packets about local screening centers.</p>
+                        <div class="photo-grid two-col">
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Survivor wall with notes
+                                <!-- <img src="event2-survivorwall.jpg" alt="Survivor wall"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Seniors at stations
+                                <!-- <img src="event2-seniors.jpg" alt="Senior center attendees"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-card-header">
+                        <h3>🏡 Event #3 — Second Senior Center Walkthrough</h3>
+                        <span class="timeline-badge">Spring 2026</span>
+                    </div>
+                    <div class="timeline-card-body">
+                        <p>We returned to another senior center with our refined walkthrough, featuring our colorful "Who Lung Cancer Why" poster and expanded educational materials. Seniors could walk the full simulated LDCT process and ask questions one-on-one.</p>
+                        <div class="photo-grid four-col">
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Setup
+                                <!-- <img src="event3-setup.jpg" alt="Event setup"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Team presenting
+                                <!-- <img src="event3-team.jpg" alt="Team"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Seniors engaging
+                                <!-- <img src="event3-seniors.jpg" alt="Seniors"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Info poster
+                                <!-- <img src="event3-poster.jpg" alt="Poster"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4: MUSD -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-card-header">
+                        <h3>🏫 Event #4 — Milpitas Unified School District Board Meeting</h3>
+                        <span class="timeline-badge">April 28, 2026</span>
+                    </div>
+                    <div class="timeline-card-body">
+                        <span class="attendee-count">✅ ~40 attendees + 14 board members</span>
+                        <p>We presented Project Breathe Hope to the Milpitas Unified School District board, sharing our findings and mission with district leadership. Our presentation was featured in the official MUSD Board Highlights newsletter, sent to all Milpitas Unified families. A board member called it <em>"a really amazing project — I love to see the potential where this is going."</em></p>
+                        <div class="photo-grid two-col">
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Board presentation
+                                <!-- <img src="event4-board.jpg" alt="MUSD Board Presentation"> -->
+                            </div>
+                            <div class="photo-slot">
+                                <span class="photo-slot-label">📸</span>
+                                Team at podium
+                                <!-- <img src="event4-team.jpg" alt="Team presenting"> -->
+                            </div>
+                        </div>
+                        <div style="margin-top:25px; background:#f0f7fb; border-radius:15px; padding:20px; border-left:5px solid var(--ocean);">
+                            <p style="margin:0; font-style:italic; color:var(--charcoal);">"MHS students stress importance of lung cancer screenings — a Milpitas High School student trio continues to spread the word on the importance of lung cancer screenings through their initiative, Project Breathe Hope."</p>
+                            <p style="margin-top:10px; font-size:0.9rem; color:var(--ocean); font-weight:600;">— MUSD Board Highlights, April 28, 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end timeline -->
+    </div>
+</section>
+
+<!-- ── RISK QUIZ ── -->
+<section id="risk-quiz">
+    <div class="section-inner">
         <h2>Should You Get Screened?</h2>
-        <p class="section-intro">Take this quick quiz to see if you might benefit from lung cancer screening. This is not medical advice - always consult with your doctor.</p>
-        
-        <div class="quiz-container">
-            <div class="quiz-question">
-                <h3>1. What is your age?</h3>
-                <div class="quiz-options">
-                    <div class="quiz-option" data-question="age" data-value="under50">Under 50</div>
-                    <div class="quiz-option" data-question="age" data-value="50-80">50-80 years old</div>
-                    <div class="quiz-option" data-question="age" data-value="over80">Over 80</div>
-                </div>
-            </div>
+        <p class="section-intro" style="margin:0 auto 40px;">Use our quick quiz to check your personal risk factors — or fill out our full in-depth risk assessment form below.</p>
 
-            <div class="quiz-question">
-                <h3>2. Do you currently smoke or have you smoked in the past?</h3>
-                <div class="quiz-options">
-                    <div class="quiz-option" data-question="smoking" data-value="never">Never smoked</div>
-                    <div class="quiz-option" data-question="smoking" data-value="former">Former smoker (quit within 15 years)</div>
-                    <div class="quiz-option" data-question="smoking" data-value="current">Current smoker</div>
-                </div>
-            </div>
-
-            <div class="quiz-question">
-                <h3>3. If you smoke or smoked, for how many years?</h3>
-                <div class="quiz-options">
-                    <div class="quiz-option" data-question="duration" data-value="none">Never smoked / Less than 20 years</div>
-                    <div class="quiz-option" data-question="duration" data-value="20plus">20+ years with significant smoking history</div>
-                </div>
-            </div>
-
-            <button class="btn btn-primary" onclick="calculateRisk()" style="margin-top: 20px;">See My Results</button>
-
-            <div id="quiz-result"></div>
+        <div class="quiz-tabs">
+            <button class="quiz-tab active" onclick="switchTab('quick')">⚡ Quick Quiz</button>
+            <button class="quiz-tab" onclick="switchTab('form')">📋 Full Risk Assessment Form</button>
         </div>
-    </section>
 
-    <!-- Event Section -->
-    <section id="our-event">
-        <h2>Join Our Immersive Experience</h2>
-        <p class="section-intro">We're hosting an interactive walkthrough event to educate our community about lung cancer screening in an engaging, supportive environment. No medical procedures on-site—just education, support, and resources!</p>
-        
+        <!-- Quick Quiz Panel -->
+        <div class="quiz-panel active" id="panel-quick">
+            <div class="quiz-container">
+
+                <div class="quiz-question">
+                    <h3>1. What is your age?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-question="age" data-value="under50">Under 50</button>
+                        <button class="quiz-option" data-question="age" data-value="50-80">50–80 years old</button>
+                        <button class="quiz-option" data-question="age" data-value="over80">Over 80</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>2. What is your smoking history?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-question="smoking" data-value="never">Never smoked</button>
+                        <button class="quiz-option" data-question="smoking" data-value="former">Former smoker (quit within the last 15 years)</button>
+                        <button class="quiz-option" data-question="smoking" data-value="current">Current smoker</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>3. How long have you smoked / did you smoke?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-question="duration" data-value="none">Never smoked or fewer than 20 years</button>
+                        <button class="quiz-option" data-question="duration" data-value="20plus">20+ years of significant smoking</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>4. Have you been exposed to any of these risk factors? (select all that apply)</h3>
+                    <div class="quiz-options" id="riskFactorOptions">
+                        <button class="quiz-option multi" data-factor="radon">Radon gas exposure at home or work</button>
+                        <button class="quiz-option multi" data-factor="asbestos">Asbestos or other workplace carcinogens</button>
+                        <button class="quiz-option multi" data-factor="secondhand">Significant secondhand smoke exposure</button>
+                        <button class="quiz-option multi" data-factor="family">Family history of lung cancer</button>
+                        <button class="quiz-option multi" data-factor="none_extra">None of these</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>5. Have you noticed any of these symptoms? (select all that apply)</h3>
+                    <div class="quiz-options" id="symptomOptions">
+                        <button class="quiz-option multi" data-symptom="cough">Persistent cough lasting 3+ weeks</button>
+                        <button class="quiz-option multi" data-symptom="breath">Unexplained shortness of breath</button>
+                        <button class="quiz-option multi" data-symptom="weight">Unexplained weight loss</button>
+                        <button class="quiz-option multi" data-symptom="pain">Chest pain or bone pain</button>
+                        <button class="quiz-option multi" data-symptom="none_sym">No symptoms</button>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="calculateRisk()" style="margin-top: 10px;">See My Results</button>
+
+                <div id="quiz-result"></div>
+            </div>
+        </div>
+
+        <!-- Google Form Panel -->
+        <div class="quiz-panel" id="panel-form">
+            <div class="form-container">
+                <!-- Embedding the existing RSVP form for now; swap src for the dedicated risk-factor form URL when ready -->
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?embedded=true"
+                    title="Breathe Hope Risk Factor Assessment Form"
+                    loading="lazy">
+                    Loading form…
+                </iframe>
+            </div>
+            <p style="text-align:center; margin-top:20px; color:#777; font-size:0.9rem;">This form is also available <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank" style="color:var(--ocean); font-weight:600;">in a new tab</a>.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ── OUR EVENT ── -->
+<section id="our-event">
+    <div class="section-inner">
+        <h2>Join Our Next Event</h2>
+        <p class="section-intro">We're hosting an interactive walkthrough event to educate our community about lung cancer screening in an engaging, supportive environment. No medical procedures on-site — just education, support, and resources!</p>
+
         <div class="event-details">
             <div class="event-info">
                 <div class="event-info-item">
                     <strong>📅 When</strong>
-                    <p>Friday, April 17, 2026<br>4:00 PM - 6:30 PM</p>
+                    <p>Friday, April 17, 2026<br>4:00 PM – 6:30 PM</p>
                 </div>
                 <div class="event-info-item">
                     <strong>📍 Where</strong>
@@ -805,7 +1238,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 50px; margin-bottom: 25px; font-size: 2rem;">What to Expect:</h3>
+            <h3 style="margin-top:50px; margin-bottom:25px; font-size:2rem;">What to Expect:</h3>
             <ul class="event-features">
                 <li>Survivor Wall with messages of hope</li>
                 <li>Interactive myth-busting stations</li>
@@ -816,17 +1249,90 @@
                 <li>Free care packages and refreshments</li>
             </ul>
 
-            <div style="margin-top: 50px;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank" class="btn btn-primary" style="font-size: 1.3rem; padding: 20px 50px;">Reserve Your Spot - RSVP Free</a>
+            <div style="margin-top:50px; text-align:center;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFlcCTzyWqkqyzUpPVXCmOiEuXJ8_ot4T4785RRu5VaGW02g/viewform?usp=header" target="_blank" class="btn btn-primary" style="font-size:1.3rem; padding:20px 50px;">Reserve Your Spot — RSVP Free</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Resources Section -->
-    <section id="resources">
+<!-- ── CHILDREN'S BOOK ── -->
+<section id="book">
+    <div class="section-inner">
+        <h2>Coming Soon: Sophie's Story</h2>
+        <p class="section-intro">We're self-publishing a children's book this summer to bring lung cancer awareness to younger audiences and their families.</p>
+        <div class="book-layout">
+            <div class="book-info">
+                <span class="book-coming-soon">✨ Summer 2026</span>
+                <h3>A Story of Hope, Kindness &amp; Community</h3>
+                <p>Through Sophie's journey, our children's book teaches young readers about the impact of lung cancer while showing the importance of kindness, hope, and community support during difficult times. The story encourages children to take positive action and reminds them that love and friendship can help families grow stronger even when facing challenges.</p>
+                <ul class="book-plans">
+                    <li>Read at children's hospitals and library story times</li>
+                    <li>Distributed to teachers' classrooms and school libraries</li>
+                    <li>Donated to cancer centers and pediatric clinics</li>
+                    <li>Fundraiser to support our printing and distribution</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-weight:600; color:var(--charcoal); margin-bottom:20px; font-size:1.1rem;">Illustrations in Progress 🎨</p>
+                <div class="book-illustrations">
+                    <div class="book-illustration-slot">
+                        <span style="font-size:1.5rem; margin-bottom:6px; display:block;">🎨</span>
+                        Illustration 1
+                        <!-- <img src="book-illus-1.jpg" alt="Sophie at home"> -->
+                    </div>
+                    <div class="book-illustration-slot">
+                        <span style="font-size:1.5rem; margin-bottom:6px; display:block;">🎨</span>
+                        Illustration 2
+                        <!-- <img src="book-illus-2.jpg" alt="Sophie with grandfather"> -->
+                    </div>
+                    <div class="book-illustration-slot">
+                        <span style="font-size:1.5rem; margin-bottom:6px; display:block;">🎨</span>
+                        Illustration 3
+                        <!-- <img src="book-illus-3.jpg" alt="Sophie on the bus"> -->
+                    </div>
+                    <div class="book-illustration-slot">
+                        <span style="font-size:1.5rem; margin-bottom:6px; display:block;">🎨</span>
+                        Illustration 4
+                        <!-- <img src="book-illus-4.jpg" alt="Sophie planting with grandfather"> -->
+                    </div>
+                </div>
+                <p style="margin-top:15px; font-size:0.9rem; color:#888; text-align:center;">Illustrations currently in progress — final versions coming soon!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── SOCIAL MEDIA ── -->
+<section id="social" style="padding:80px 20px; text-align:center;">
+    <div class="section-inner">
+        <h2 style="color:white;">Follow Our Journey</h2>
+        <p class="section-intro" style="color:rgba(255,255,255,0.8); margin:0 auto 20px;">Stay up to date with our events, content, and behind-the-scenes moments.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/project.breathehope" target="_blank" class="social-card">
+                <span class="social-icon">📸</span>
+                <span class="social-name">Instagram</span>
+                <span class="social-handle">@project.breathehope</span>
+            </a>
+            <a href="https://youtube.com/shorts/YMMl7ZWixsc" target="_blank" class="social-card">
+                <span class="social-icon">🎬</span>
+                <span class="social-name">TikTok Recap</span>
+                <span class="social-handle">Watch our event video →</span>
+            </a>
+            <a href="mailto:project.breathehope@gmail.com" class="social-card">
+                <span class="social-icon">✉️</span>
+                <span class="social-name">Email Us</span>
+                <span class="social-handle">project.breathehope@gmail.com</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ── RESOURCES ── -->
+<section id="resources">
+    <div class="section-inner">
         <h2>Helpful Resources</h2>
         <p class="section-intro">Access trusted information and support for lung cancer screening and prevention.</p>
-        
         <div class="resources-grid">
             <div class="resource-card">
                 <div class="resource-icon">🏥</div>
@@ -838,7 +1344,7 @@
                 <div class="resource-icon">📚</div>
                 <h3>Learn More</h3>
                 <p>Get comprehensive information about lung cancer, screening guidelines, and prevention.</p>
-                <a href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer" target="_blank" class="btn btn-secondary">Visit American Lung Association</a>
+                <a href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer" target="_blank" class="btn btn-secondary">American Lung Association</a>
             </div>
             <div class="resource-card">
                 <div class="resource-icon">💪</div>
@@ -847,134 +1353,181 @@
                 <a href="https://www.cancer.org/cancer/types/lung-cancer.html" target="_blank" class="btn btn-secondary">Find Support</a>
             </div>
         </div>
-    </section>
-    <section id="contact">
-    <h2>Get in Touch</h2>
-    <p class="section-intro" style="margin-left: auto; margin-right: auto;">
-        Have questions or want to get involved? Reach out to our team at 
-        <a href="mailto:project.breathehope@gmail.com" style="color: var(--ocean); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--ocean);">
-            project.breathehope@gmail.com
-        </a>!
-    </p>
-         
-    <div class="contact-info">
-        <h3 style="margin-bottom: 35px; color: var(--charcoal); font-size: 1.8rem;">Our Team</h3>
-        
-        <div class="team-member">
-            <strong>Reyna Aranjany</strong>
-        </div>
-        
-        <div class="team-member">
-            <strong>Vritika Kummari</strong>
-        </div>
-        
-        <div class="team-member">
-            <strong>Poorvi Vijayananda</strong>
-        </div>
-
-        <p style="margin-top: 35px; color: #666;">
-            We'd love to hear from you! Whether you want to attend our event, volunteer, or just learn more about lung cancer screening.
-        </p>
     </div>
 </section>
 
+<!-- ── CONTACT ── -->
+<section id="contact">
+    <div class="section-inner">
+        <h2>Get in Touch</h2>
+        <p class="section-intro" style="margin-left:auto; margin-right:auto;">
+            Have questions or want to get involved? Reach out to our team at
+            <a href="mailto:project.breathehope@gmail.com" style="color:var(--ocean); font-weight:600; text-decoration:none; border-bottom:2px solid var(--ocean);">project.breathehope@gmail.com</a>!
+        </p>
+        <div class="contact-info">
+            <h3 style="margin-bottom:35px; color:var(--charcoal); font-size:1.8rem;">Our Team</h3>
+            <div class="team-member"><strong>Reyna Aranjany</strong></div>
+            <div class="team-member"><strong>Vritika Kummari</strong></div>
+            <div class="team-member"><strong>Poorvi Vijayananda</strong></div>
+            <p style="margin-top:35px; color:#666;">
+                We'd love to hear from you! Whether you want to attend our next event, volunteer, or learn more about lung cancer screening.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Breathe Hope - Lung Cancer Screening Awareness Project</p>
-        <p style="margin-top: 15px;">Part of the American Lung Cancer Screening Innovation Challenge</p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Breathe Hope — Lung Cancer Screening Awareness Project</p>
+    <p style="margin-top:15px;">Part of the American Lung Cancer Screening Innovation Challenge</p>
+    <p style="margin-top:10px; opacity:0.6; font-size:0.9rem;">Founded by students of Milpitas High School</p>
+</footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+    });
 
-        // Quiz functionality
-        let quizAnswers = {
-            age: null,
-            smoking: null,
-            duration: null
-        };
+    // Tab switching
+    function switchTab(tab) {
+        document.querySelectorAll('.quiz-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.quiz-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('panel-' + tab).classList.add('active');
+        event.target.classList.add('active');
+    }
 
-        document.querySelectorAll('.quiz-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const question = this.dataset.question;
-                const value = this.dataset.value;
-                
-                // Remove selected class from siblings
-                this.parentElement.querySelectorAll('.quiz-option').forEach(opt => {
-                    opt.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked option
+    // Single-select quiz options (Q1-3)
+    let quizAnswers = { age: null, smoking: null, duration: null };
+    let selectedFactors = new Set();
+    let selectedSymptoms = new Set();
+
+    document.querySelectorAll('.quiz-option:not(.multi)').forEach(option => {
+        option.addEventListener('click', function() {
+            const question = this.dataset.question;
+            this.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+            this.classList.add('selected');
+            quizAnswers[question] = this.dataset.value;
+        });
+    });
+
+    // Multi-select options (Q4-5 risk factors & symptoms)
+    document.querySelectorAll('#riskFactorOptions .quiz-option.multi').forEach(option => {
+        option.addEventListener('click', function() {
+            const factor = this.dataset.factor;
+            if (factor === 'none_extra') {
+                selectedFactors.clear();
+                document.querySelectorAll('#riskFactorOptions .quiz-option').forEach(o => o.classList.remove('selected'));
                 this.classList.add('selected');
-                
-                // Store answer
-                quizAnswers[question] = value;
-            });
-        });
-
-        function calculateRisk() {
-            const resultDiv = document.getElementById('quiz-result');
-            
-            // Check if all questions are answered
-            if (!quizAnswers.age || !quizAnswers.smoking || !quizAnswers.duration) {
-                resultDiv.className = '';
-                resultDiv.innerHTML = '<p style="color: var(--coral);">⚠️ Please answer all questions to see your results.</p>';
-                resultDiv.classList.add('show');
-                return;
-            }
-
-            let isHighRisk = false;
-            let message = '';
-
-            // Determine risk based on answers
-            if (quizAnswers.age === '50-80' && 
-                (quizAnswers.smoking === 'current' || quizAnswers.smoking === 'former') && 
-                quizAnswers.duration === '20plus') {
-                isHighRisk = true;
-                message = `
-                    <h3>✓ You May Benefit from Screening</h3>
-                    <p>Based on your answers, you meet the general criteria for lung cancer screening. The USPSTF recommends annual LDCT screening for adults aged 50-80 with a significant smoking history.</p>
-                    <p style="margin-top: 20px;"><strong>Next Steps:</strong><br>
-                    • Talk to your doctor about screening<br>
-                    • Ask about insurance coverage<br>
-                    • Find a screening center near you</p>
-                    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">This is not medical advice. Please consult with a healthcare provider to determine if screening is right for you.</p>
-                `;
-            } else if (quizAnswers.age === '50-80' && quizAnswers.smoking !== 'never') {
-                isHighRisk = true;
-                message = `
-                    <h3>💭 Consider Talking to Your Doctor</h3>
-                    <p>While you may not meet all the standard screening criteria, it's worth discussing your individual risk factors with your healthcare provider. They can help determine if screening is appropriate for you.</p>
-                    <p style="margin-top: 20px;"><strong>Remember:</strong> Even if you don't currently qualify for screening, staying informed about lung health is important!</p>
-                `;
+                selectedFactors.add('none_extra');
             } else {
-                message = `
-                    <h3>ℹ️ You May Not Need Screening Yet</h3>
-                    <p>Based on your answers, you may not currently meet the criteria for lung cancer screening. However, it's always good to stay informed and talk to your doctor about your lung health.</p>
-                    <p style="margin-top: 20px;"><strong>Stay Healthy:</strong><br>
-                    • Avoid tobacco smoke<br>
-                    • Test for radon in your home<br>
-                    • Maintain a healthy lifestyle<br>
-                    • See your doctor regularly</p>
-                `;
+                document.querySelector('#riskFactorOptions [data-factor="none_extra"]')?.classList.remove('selected');
+                selectedFactors.delete('none_extra');
+                if (selectedFactors.has(factor)) {
+                    selectedFactors.delete(factor);
+                    this.classList.remove('selected');
+                } else {
+                    selectedFactors.add(factor);
+                    this.classList.add('selected');
+                }
             }
+        });
+    });
 
-            resultDiv.className = isHighRisk ? 'high-risk show' : 'low-risk show';
-            resultDiv.innerHTML = message;
-            
-            // Scroll to result
-            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    document.querySelectorAll('#symptomOptions .quiz-option.multi').forEach(option => {
+        option.addEventListener('click', function() {
+            const sym = this.dataset.symptom;
+            if (sym === 'none_sym') {
+                selectedSymptoms.clear();
+                document.querySelectorAll('#symptomOptions .quiz-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedSymptoms.add('none_sym');
+            } else {
+                document.querySelector('#symptomOptions [data-symptom="none_sym"]')?.classList.remove('selected');
+                selectedSymptoms.delete('none_sym');
+                if (selectedSymptoms.has(sym)) {
+                    selectedSymptoms.delete(sym);
+                    this.classList.remove('selected');
+                } else {
+                    selectedSymptoms.add(sym);
+                    this.classList.add('selected');
+                }
+            }
+        });
+    });
+
+    function calculateRisk() {
+        const resultDiv = document.getElementById('quiz-result');
+
+        if (!quizAnswers.age || !quizAnswers.smoking || !quizAnswers.duration) {
+            resultDiv.className = '';
+            resultDiv.innerHTML = '<p style="color:var(--coral);">⚠️ Please answer questions 1–3 to see your results.</p>';
+            resultDiv.classList.add('show');
+            return;
         }
-    </script>
+
+        const hasSymptoms = selectedSymptoms.size > 0 && !selectedSymptoms.has('none_sym');
+        const hasExtraRisk = selectedFactors.size > 0 && !selectedFactors.has('none_extra');
+
+        let riskClass = 'low-risk';
+        let message = '';
+
+        // Primary USPSTF criteria
+        const meetsUSPSTF = quizAnswers.age === '50-80' &&
+            (quizAnswers.smoking === 'current' || quizAnswers.smoking === 'former') &&
+            quizAnswers.duration === '20plus';
+
+        if (meetsUSPSTF) {
+            riskClass = 'high-risk';
+            message = `
+                <h3 style="margin-bottom:12px;">✅ You Meet Screening Criteria</h3>
+                <p>Based on your age and smoking history, you meet the USPSTF guidelines for annual LDCT lung cancer screening. Talk to your doctor right away about scheduling a scan — it's typically covered by insurance.</p>
+                <p style="margin-top:16px;"><strong>Next Steps:</strong><br>
+                • Talk to your doctor about annual LDCT screening<br>
+                • Ask about insurance coverage (most plans cover this)<br>
+                • Find a screening center near you using the link below</p>
+                ${hasSymptoms ? '<p style="margin-top:16px; background:#fff3cd; padding:14px; border-radius:10px;"><strong>⚠️ You also reported symptoms.</strong> Please contact your doctor promptly — don\'t wait for a scheduled screening.</p>' : ''}
+                <p style="margin-top:16px; font-size:0.9rem; opacity:0.75;">This is not medical advice. Please consult a healthcare provider to confirm what's right for you.</p>
+            `;
+        } else if (quizAnswers.age === '50-80' && quizAnswers.smoking !== 'never') {
+            riskClass = 'consult';
+            message = `
+                <h3 style="margin-bottom:12px;">💬 Consider Talking to Your Doctor</h3>
+                <p>You don't fully meet standard screening criteria, but your age and smoking history are factors worth discussing with your doctor. Additional risk factors like radon or family history may also influence whether screening is right for you.</p>
+                ${hasExtraRisk ? '<p style="margin-top:16px;"><strong>Additional risk factors you noted</strong> (radon, asbestos, family history, secondhand smoke) may increase your personal risk. Mention these to your doctor.</p>' : ''}
+                ${hasSymptoms ? '<p style="margin-top:16px; background:#fff3cd; padding:14px; border-radius:10px;"><strong>⚠️ You also reported symptoms.</strong> Contact your doctor soon to discuss them.</p>' : ''}
+                <p style="margin-top:16px; font-size:0.9rem; opacity:0.75;">This is not medical advice. Always consult a healthcare provider.</p>
+            `;
+        } else if (hasSymptoms) {
+            riskClass = 'consult';
+            message = `
+                <h3 style="margin-bottom:12px;">⚠️ You Reported Symptoms</h3>
+                <p>Even if you don't currently meet the standard screening criteria, you've noted symptoms (persistent cough, shortness of breath, weight loss, or pain) that warrant a conversation with your doctor as soon as possible. These symptoms can have many causes, but it's always best to get checked.</p>
+                <p style="margin-top:16px; font-size:0.9rem; opacity:0.75;">This is not medical advice. Always consult a healthcare provider.</p>
+            `;
+        } else {
+            riskClass = 'low-risk';
+            message = `
+                <h3 style="margin-bottom:12px;">ℹ️ You May Not Need Screening Yet</h3>
+                <p>Based on your answers, you may not currently meet standard lung cancer screening criteria. That's great news! Still, staying informed and maintaining a healthy lifestyle is always worthwhile.</p>
+                <p style="margin-top:16px;"><strong>Stay Healthy:</strong><br>
+                • Avoid tobacco smoke<br>
+                • Test for radon in your home (it's a leading cause of lung cancer in non-smokers)<br>
+                • See your doctor regularly<br>
+                • Know your family history</p>
+                ${hasExtraRisk ? '<p style="margin-top:16px;"><strong>You noted some additional risk factors.</strong> Mention these at your next checkup.</p>' : ''}
+                <p style="margin-top:16px; font-size:0.9rem; opacity:0.75;">This is not medical advice. Always consult a healthcare provider.</p>
+            `;
+        }
+
+        resultDiv.className = riskClass + ' show';
+        resultDiv.innerHTML = message;
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+</script>
 </body>
 </html>
